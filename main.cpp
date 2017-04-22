@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("game-boost.com");
     db.setUserName("gameboos_itcuser");
-    db.setPassword("ITCTest123!");
+    db.setPassword("################");
     db.setDatabaseName("gameboos_itcalpha");
 
     //Connectivity tester
