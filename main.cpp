@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("game-boost.com");
     db.setUserName("gameboos_itcuser");
-    db.setPassword("################################");
+    db.setPassword("ITCTest123!");
     db.setDatabaseName("gameboos_itcalpha");
 
     //Connectivity tester
@@ -29,11 +29,10 @@ int main(int argc, char *argv[])
     //Adding Data to the Database
     // int used for writing, string used for reading
     // string id, kW, kWh, PQ
-    int id[3], kW[3], kWh[3], PQ[3];
-    id[3]=(1,2,3);
-    kW[3]=(1,20,30);
-    kWh[3]=(11,21,31);
-    PQ[3]=(12,22,32);
+    int id[3]={1,2,3};
+    int kW[3]={1,20,30};
+    int kWh[3]={11,21,31};
+    int PQ[3]={12,22,32};
 
     QSqlQuery mysqlquery;
 
@@ -47,6 +46,7 @@ int main(int argc, char *argv[])
         mysqlquery.bindValue(":kWh", kWh[i]);
         mysqlquery.bindValue(":PQ", PQ[i]);
         mysqlquery.exec();
+        cout << "Data query " << i << " sucessfully sent!" << endl;
     }
 
     /* Section here is used to see the data from the database
